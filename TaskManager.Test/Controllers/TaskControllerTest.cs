@@ -28,7 +28,7 @@ namespace TaskManager.Test.Controllers
         public void Test_GetTaskByID()
         {
             TaskManagerController tc = new TaskManagerController();
-            IHttpActionResult result = tc.GetTaskByID("17677100-7c23-47a5-ad97-9004318d400e");
+            IHttpActionResult result = tc.GetTaskByID("93eaf854-0dce-42d2-a4da-33426ba31c17");
             var actual = result as OkNegotiatedContentResult<Task>;
             Assert.IsNotNull(actual);
             Assert.IsNotNull(actual.Content);
@@ -58,7 +58,7 @@ namespace TaskManager.Test.Controllers
         {
             TaskManagerController tc = new TaskManagerController();
             Task taskToAdd = new Task();
-            taskToAdd.Task_ID = "17677100-7c23-47a5-ad97-9004318d400e";
+            taskToAdd.Task_ID = "93eaf854-0dce-42d2-a4da-33426ba31c17";
             taskToAdd.Task_Name = "Task updated from API Unit Test Project";
             taskToAdd.Priority = 50;
             taskToAdd.Start_Date = DateTime.Now;
@@ -75,7 +75,7 @@ namespace TaskManager.Test.Controllers
         public void Test_DeleteTask()
         {
             TaskManagerController tc = new TaskManagerController();
-            IHttpActionResult result = tc.DeleteTask("a46a3531-594c-4f55-9a2a-060fa0f43e5f");
+            IHttpActionResult result = tc.DeleteTask("93eaf854-0dce-42d2-a4da-33426ba31c17");
             var actual = result as OkNegotiatedContentResult<bool>;
             Assert.AreEqual(actual.Content, true);
         }
